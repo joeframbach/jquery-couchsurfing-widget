@@ -1,4 +1,18 @@
 jquery-couchsurfing-widget
 ==========================
 
-115px tall widget for Couchsurfing profile
+Add a couchsurfing profile widget to your page with one tag.
+
+![Screenshot](widget.png)
+
+---
+
+To use this widget, include on your page:
+
+    <div class="couchsurfing-widget" data-username="joeframbach"></div>
+
+Just be sure to change the username as appropriate and remember to include the .js file.
+
+---
+
+Couchsurfing doesn't have an API so I faked one with YQL and JQuery, so it's probably going to be finicky.
