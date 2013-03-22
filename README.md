@@ -11,7 +11,7 @@ To use this widget, include on your page:
 
     <div class="couchsurfing-widget" data-username="joeframbach"></div>
 
-Just be sure to change the username as appropriate and remember to include the .js file.
+Just be sure to change the username as appropriate and remember to include the .js file. Don't worry about the css file, it will be dynamically loaded.
 
 ---
 
