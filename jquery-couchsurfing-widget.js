@@ -2,9 +2,9 @@ $(function () {
     $('head').append('<style type="text/css">'
     +'.couchsurfing-widget{background-color:#eee;position:relative;border:1px solid #ddd;color:#666;border-radius:3px;font-family:"Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif}'
     +'.couchsurfing-widget a .link{position:absolute;width:100%;height:100%;top:0;left:0;z-index:2}'
-    +'.couchsurfing-widget .top{color:#D4490B;font-size:1.5em;height:64px;line-height:64px;padding-left:125px;vertical-align:middle;border-bottom:1px solid #ccc}'
+    +'.couchsurfing-widget .top{color:#D4490B;font-size:24px;height:64px;line-height:64px;padding-left:125px;vertical-align:middle;border-bottom:1px solid #ccc}'
     +'.couchsurfing-widget .top img{vertical-align:middle;padding:4px}'
-    +'.couchsurfing-widget .middle{padding-left:125px;background:#F8F7F3;vertical-align:middle;height:48px;line-height:48px}'
+    +'.couchsurfing-widget .middle{padding-left:125px;background:#F8F7F3;vertical-align:middle;height:48px;line-height:48px;font-size:16px}'
     +'.couchsurfing-widget .middle img{vertical-align:middle;padding-right:8px}'
     +'.couchsurfing-widget .circular{position:absolute;top:8px;left:8px;width:100px;height:100px;line-height:92px;text-align:center;overflow:hidden;border-radius:50%;-webkit-border-radius:50%;-moz-border-radius:50%;box-shadow:0 0 10px rgba(0,0,0,.9);-webkit-box-shadow:0 0 10px rgba(0,0,0,.9);-moz-box-shadow:0 0 10px rgba(0,0,0,.9)}'
     +'.couchsurfing-widget .circular img{vertical-align:middle;display:none}'
@@ -26,7 +26,7 @@ $(function () {
                 $(e).attr('src', $(e).data('src'));
             });
             // look for data only if the profile h1 exists
-            return (html.find('h1.profile').length) && {
+            return ($html.find('h1.profile').length) && {
                 username: $html.find("th.generalinfo:contains('membername')").next('td').find('p').text(),
                 realname: $html.find('h1.profile').html(),
                 image: $html.find("a[href^='/image_gallery'] img").data('src'),

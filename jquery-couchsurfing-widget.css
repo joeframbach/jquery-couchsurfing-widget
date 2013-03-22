@@ -16,7 +16,7 @@
 
 .couchsurfing-widget .top {
     color: #D4490B;
-    font-size: 1.5em;
+    font-size: 24px;
     height: 64px;
     line-height: 64px;
     padding-left: 125px;
@@ -31,6 +31,7 @@
     padding-left: 125px;
     background: #F8F7F3;
     vertical-align: middle;
+    font-size: 16px;
     height: 48px;
     line-height: 48px;
 }
