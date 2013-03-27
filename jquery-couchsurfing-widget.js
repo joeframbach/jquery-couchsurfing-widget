@@ -6,10 +6,7 @@ $(function () {
     +'.couchsurfing-widget .top img{vertical-align:middle;padding:4px}'
     +'.couchsurfing-widget .middle{padding-left:125px;background:#F8F7F3;vertical-align:middle;height:48px;line-height:48px;font-size:16px}'
     +'.couchsurfing-widget .middle img{vertical-align:middle;padding-right:8px}'
-    +'.couchsurfing-widget .circular{position:absolute;top:8px;left:8px;width:100px;height:100px;line-height:92px;text-align:center;overflow:hidden;border-radius:50%;-webkit-border-radius:50%;-moz-border-radius:50%;box-shadow:0 0 10px rgba(0,0,0,.9);-webkit-box-shadow:0 0 10px rgba(0,0,0,.9);-moz-box-shadow:0 0 10px rgba(0,0,0,.9)}'
-    +'.couchsurfing-widget .circular img{vertical-align:middle;display:none}'
-    +'.couchsurfing-widget .circular img.portrait{height:auto;width:100px;display:inline-block}'
-    +'.couchsurfing-widget .circular img.landscape{width:auto;height:100px;display:inline-block}'
+    +'.couchsurfing-widget .circular{position:absolute;top:8px;left:8px;width:100px;height:100px;background-size:cover;border-radius:50%;-webkit-border-radius:50%;-moz-border-radius:50%;box-shadow:0 0 10px rgba(0,0,0,.9);-webkit-box-shadow:0 0 10px rgba(0,0,0,.9);-moz-box-shadow:0 0 10px rgba(0,0,0,.9)}'
     +'</style>');
     var load_profile = function (username, next, err) {
         // use YQL to bypass CORS, and jquery to traverse page
@@ -73,16 +70,12 @@ $(function () {
         // show the skeleton, then async-load the rest of the profile
         var $widget = $(this).append(
             '<a href="http://www.couchsurfing.org/users/'+username+'"><span class="link"></span></a>'
-            +'<div class="circular"><img /></div>'
+            +'<div class="circular"></div>'
             +'<div class="top">'+username+' <img src="'+cslogo+'" /></div>'
             +'<div class="middle"></div>'
         );
         load_profile(username, function (profile) {
-            $img = $widget.find('div.circular img').attr('src',profile.image);
-            $img.load(function() {
-                if ($img.width() > $img.height()) $img.addClass('landscape');
-                else $img.addClass('portrait');
-            });
+            $widget.find('div.circular').css('background-image','url('+profile.image+')');
             $widget.find('.middle').append(profile.couch_status).append(profile.couch_status.attr('title'));
             $widget.find('.middle').append(' &ndash; ' + profile.ref_sum['Positive'] + ' positive and ' + profile.ref_sum['Negative'] + ' negative reviews');
         }, function(err) {

@@ -46,9 +46,7 @@
     left: 8px;
     width: 100px;
     height: 100px;
-    line-height: 92px;
-    text-align: center;
-    overflow: hidden;
+    background-size: cover;
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -56,6 +54,3 @@
     -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .9);
     -moz-box-shadow: 0 0 10px rgba(0, 0, 0, .9);
 }
-.couchsurfing-widget .circular img {vertical-align: middle; display:none; }
-.couchsurfing-widget .circular img.portrait { height: auto; width: 100px; display: inline-block; }
-.couchsurfing-widget .circular img.landscape { width: auto; height: 100px; display: inline-block; }
